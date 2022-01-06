@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_register"
+    app:startDestination="@id/emailVerifyFragment">
+
+    <fragment
+        android:id="@+id/emailVerifyFragment"
+        android:name="com.simmariazi.myapplication.ui.register.EmailVerifyFragment"
+        android:label="EmailVerifyFragment" >
+        <action
+            android:id="@+id/action_emailVerifyFragment_to_passwordFragment"
+            app:destination="@id/passwordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/passwordFragment"
+        android:name="com.simmariazi.myapplication.ui.register.PasswordFragment"
+        android:label="PasswordFragment" />
+</navigation>
