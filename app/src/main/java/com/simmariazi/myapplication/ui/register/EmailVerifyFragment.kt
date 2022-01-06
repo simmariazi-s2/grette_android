@@ -5,7 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.simmariazi.myapplication.R
+import com.simmariazi.myapplication.databinding.ActivityLoginBinding
+import com.simmariazi.myapplication.databinding.FragmentEmailVerifyBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +25,7 @@ class EmailVerifyFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var binding:FragmentEmailVerifyBinding? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +40,8 @@ class EmailVerifyFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_email_verify, container, false)
+        binding = DataBindingUtil.inflate(inflater,R.layout.fragment_email_verify,container,false)
+        return binding!!.root
     }
 
     companion object {
@@ -56,5 +62,15 @@ class EmailVerifyFragment : Fragment() {
                     putString(ARG_PARAM2, param2)
                 }
             }
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding!!.btnAcceptEmail.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+                val controller= Navigation.findNavController(view)
+                controller.navigate(R.id.action_emailVerifyFragment_to_passwordFragment)
+            }
+        })
     }
 }
