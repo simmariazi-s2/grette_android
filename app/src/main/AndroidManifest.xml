@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.simmariazi.myapplication">
+    package="com.simmariazi.myapplication" >
     <!-- 인터넷 사용권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -10,13 +10,16 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Grette_android">
+        android:theme="@style/Theme.Grette_android" >
+        <activity
+            android:name=".ui.RegisterActivity"
+            android:exported="false" />
         <activity
             android:name=".ui.LoginActivity"
             android:exported="false" />
         <activity
             android:name=".ui.MainActivity"
-            android:exported="true">
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
