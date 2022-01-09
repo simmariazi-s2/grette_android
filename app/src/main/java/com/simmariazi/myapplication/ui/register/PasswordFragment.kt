@@ -1,11 +1,17 @@
 package com.simmariazi.myapplication.ui.register
 
+import android.app.ActionBar
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.simmariazi.myapplication.R
+import com.simmariazi.myapplication.databinding.FragmentEmailVerifyBinding
+import com.simmariazi.myapplication.databinding.FragmentPasswordBinding
+import com.simmariazi.myapplication.ui.LoginActivity
+import com.simmariazi.myapplication.ui.RegisterActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -21,6 +27,7 @@ class PasswordFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    private var binding: FragmentPasswordBinding? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,7 +42,8 @@ class PasswordFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_password, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_password, container,false)
+        return binding!!.root
     }
 
     companion object {
@@ -57,4 +65,30 @@ class PasswordFragment : Fragment() {
                 }
             }
     }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        initialize();
+    }
+
+    private fun initialize(){
+        val customToolbar = binding!!.customToolbar;
+        val toolbar = customToolbar.toolbar;
+        val registerActivity = activity as RegisterActivity;
+
+        registerActivity.setSupportActionBar(toolbar);
+        val actionBar = registerActivity.actionBar;
+
+        setToolbar(actionBar)
+    }
+
+    private fun setToolbar(actionBar:ActionBar?){
+        if(actionBar != null){
+            actionBar.setDisplayShowCustomEnabled(true);
+            actionBar.setDisplayHomeAsUpEnabled(true);
+            actionBar.setDisplayShowTitleEnabled(false);
+        }
+    }
+
 }

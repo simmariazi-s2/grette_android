@@ -16,15 +16,8 @@
             android:paddingLeft="12dp"
             android:paddingRight="12dp">
 
-            <ImageButton
-
-                android:id="@+id/btnBack"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="45.67dp"
-                android:background="@drawable/ic_back"
-                app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+            <include layout="@layout/custom_toolbar"
+                android:id="@+id/custom_toolbar"/>
 
             <TextView
                 android:id="@+id/tvTitle"
@@ -36,7 +29,7 @@
                 android:textSize="24sp"
                 android:textStyle="bold"
                 app:layout_constraintLeft_toLeftOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btnBack" />
+                app:layout_constraintTop_toBottomOf="@+id/custom_toolbar" />
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
 
@@ -49,15 +42,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/tvTitle">
 
-                <EditText
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@android:color/transparent"
-                    android:hint="company@company.com"
-                    android:paddingLeft="15dp"
-                    android:paddingTop="25dp"
-                    android:paddingBottom="12dp" />
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="14dp"
@@ -66,7 +50,20 @@
                     android:text="회사 이메일"
                     android:textColor="#888888"
                     android:textSize="11dp" />
-
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/password_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/transparent"
+                        android:hint="company@company.com"
+                        android:paddingLeft="15dp"
+                        android:paddingTop="25dp"
+                        android:paddingBottom="12dp" />
+                </com.google.android.material.textfield.TextInputLayout>
             </RelativeLayout>
 
 
@@ -99,21 +96,28 @@
                     android:text="인증코드"
                     android:textColor="#888888"
                     android:textSize="11dp" />
-
             </RelativeLayout>
 
-            <Button
+            <LinearLayout
                 android:id="@+id/btnAcceptEmail"
-                android:layout_width="0dp"
-                android:layout_height="55dp"
-                android:layout_marginTop="15dp"
                 android:background="@drawable/common_button_border"
-                android:text="인증메일 받기"
-                android:textSize="18dp"
-                android:textStyle="bold"
+                android:layout_marginTop="16dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/rlVerifyCode" />
+                android:clickable="true"
+                app:layout_constraintTop_toBottomOf="@+id/rlVerifyCode">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="55dp"
+                    android:gravity="center"
+                    android:text="인증메일 받기"
+                    android:textSize="18dp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+
 
             <Button
                 android:id="@+id/btnOk"
