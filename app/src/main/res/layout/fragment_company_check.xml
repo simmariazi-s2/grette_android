@@ -39,7 +39,7 @@
 
                 <TextView
                     android:layout_width="match_parent"
-                    android:layout_height="55dp"
+                    android:layout_height="63dp"
                     android:gravity="center"
                     android:text="맞아요"
                     android:textColor="@color/white"
@@ -53,6 +53,7 @@
                 android:layout_height="wrap_content"
                 android:paddingTop="20dp"
                 android:text="아니에요, 직접 입력할게요."
+                android:clickable="true"
 
                 android:textColor="#4D4D4D"
                 app:layout_constraintEnd_toEndOf="parent"

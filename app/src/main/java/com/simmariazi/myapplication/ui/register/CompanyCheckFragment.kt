@@ -67,10 +67,16 @@ class CompanyCheckFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding!!.btnConfirmCompanyName.setOnClickListener(object : View.OnClickListener {
+        binding!!.tvDirectInput.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
                 val controller = Navigation.findNavController(view)
                 controller.navigate(R.id.action_companyCheckFragment_to_companySetUpFragment)
+            }
+        })
+        binding!!.btnConfirmCompanyName.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(p0: View?) {
+                val controller = Navigation.findNavController(view)
+                controller.navigate(R.id.action_companyCheckFragment_to_nickname)
             }
         })
     }
