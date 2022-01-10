@@ -6,10 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.navigation.Navigation
 import com.simmariazi.myapplication.R
 import com.simmariazi.myapplication.databinding.FragmentCompanyCheckBinding
-import com.simmariazi.myapplication.databinding.FragmentPasswordBinding
+import com.simmariazi.myapplication.databinding.FragmentCompanySetUpBinding
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -18,14 +17,14 @@ private const val ARG_PARAM2 = "param2"
 
 /**
  * A simple [Fragment] subclass.
- * Use the [CompanyCheckFragment.newInstance] factory method to
+ * Use the [CompanySetUpFragment.newInstance] factory method to
  * create an instance of this fragment.
  */
-class CompanyCheckFragment : Fragment() {
+class CompanySetUpFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var binding: FragmentCompanyCheckBinding? = null;
+    private var binding: FragmentCompanySetUpBinding? = null;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,7 +40,7 @@ class CompanyCheckFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_company_check, container, false)
+            DataBindingUtil.inflate(inflater, R.layout.fragment_company_set_up, container, false)
         return binding!!.root
     }
 
@@ -52,26 +51,24 @@ class CompanyCheckFragment : Fragment() {
          *
          * @param param1 Parameter 1.
          * @param param2 Parameter 2.
-         * @return A new instance of fragment CompanyCheckFragment.
+         * @return A new instance of fragment CompanySetUpFragment.
          */
         // TODO: Rename and change types and number of parameters
         @JvmStatic
         fun newInstance(param1: String, param2: String) =
-            CompanyCheckFragment().apply {
+            CompanySetUpFragment().apply {
                 arguments = Bundle().apply {
                     putString(ARG_PARAM1, param1)
                     putString(ARG_PARAM2, param2)
                 }
             }
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding!!.btnConfirmCompanyName.setOnClickListener(object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                val controller = Navigation.findNavController(view)
-                controller.navigate(R.id.action_companyCheckFragment_to_companySetUpFragment)
-            }
-        })
+        return initialize()
+    }
+
+    private fun initialize() {
+
     }
 }
