@@ -31,5 +31,13 @@
     <fragment
         android:id="@+id/companySetUpFragment"
         android:name="com.simmariazi.myapplication.ui.register.CompanySetUpFragment"
-        android:label="CompanySetUpFragment" />
+        android:label="CompanySetUpFragment" >
+        <action
+            android:id="@+id/action_companySetUpFragment_to_nickname"
+            app:destination="@id/nickname" />
+    </fragment>
+    <fragment
+        android:id="@+id/nickname"
+        android:name="com.simmariazi.myapplication.ui.register.Nickname"
+        android:label="Nickname" />
 </navigation>
