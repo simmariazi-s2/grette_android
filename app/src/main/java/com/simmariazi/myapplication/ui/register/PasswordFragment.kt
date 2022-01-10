@@ -73,22 +73,6 @@ class PasswordFragment : Fragment() {
     }
 
     private fun initialize(){
-        val customToolbar = binding!!.customToolbar;
-        val toolbar = customToolbar.toolbar;
-        val registerActivity = activity as RegisterActivity;
 
-        registerActivity.setSupportActionBar(toolbar);
-        val actionBar = registerActivity.actionBar;
-
-        setToolbar(actionBar)
     }
-
-    private fun setToolbar(actionBar:ActionBar?){
-        if(actionBar != null){
-            actionBar.setDisplayShowCustomEnabled(true);
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setDisplayShowTitleEnabled(false);
-        }
-    }
-
 }
