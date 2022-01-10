@@ -15,5 +15,13 @@
     <fragment
         android:id="@+id/passwordFragment"
         android:name="com.simmariazi.myapplication.ui.register.PasswordFragment"
-        android:label="PasswordFragment" />
+        android:label="PasswordFragment" >
+        <action
+            android:id="@+id/action_passwordFragment_to_companyCheckFragment"
+            app:destination="@id/companyCheckFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/companyCheckFragment"
+        android:name="com.simmariazi.myapplication.ui.register.CompanyCheckFragment"
+        android:label="CompanyCheckFragment" />
 </navigation>
