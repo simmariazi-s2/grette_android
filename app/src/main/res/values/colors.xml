@@ -10,4 +10,5 @@
     <color name="defaultColor">#222222</color>
     <color name="enableBtnColor">#9B5EFF</color>
     <color name="disableBtnColor">#DECBFF</color>
+    <color name="editTextLinkColor">#6C6C7D</color>
 </resources>

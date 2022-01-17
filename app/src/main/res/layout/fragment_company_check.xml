@@ -54,7 +54,6 @@
                 android:paddingTop="20dp"
                 android:text="아니에요, 직접 입력할게요."
                 android:clickable="true"
-
                 android:textColor="#4D4D4D"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
