@@ -19,9 +19,9 @@ class LoginActivity : AppCompatActivity() {
         val binding:ActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
 
         // 팩토리 패턴으로 LoginService객체생성
-        val loginFactory = LoginViewModelFactory(LoginService());
-        val loginViewModel = ViewModelProvider(this, loginFactory).get(LoginViewModel::class.java);
-
-        loginViewModel.requestUserLogin("test", "1123");
+//        val loginFactory = LoginViewModelFactory(LoginService());
+//        val loginViewModel = ViewModelProvider(this, loginFactory).get(LoginViewModel::class.java);
+//
+//        loginViewModel.requestUserLogin("test", "1123");
     }
 }

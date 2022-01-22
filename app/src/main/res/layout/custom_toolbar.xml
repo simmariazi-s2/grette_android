@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     android:id="@+id/appBar"
     xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="@drawable/common_line"
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
