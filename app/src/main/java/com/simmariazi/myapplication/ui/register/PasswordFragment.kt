@@ -1,6 +1,5 @@
 package com.simmariazi.myapplication.ui.register
 
-import android.app.ActionBar
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -9,10 +8,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.Navigation
 import com.simmariazi.myapplication.R
-import com.simmariazi.myapplication.databinding.FragmentEmailVerifyBinding
 import com.simmariazi.myapplication.databinding.FragmentPasswordBinding
-import com.simmariazi.myapplication.ui.LoginActivity
-import com.simmariazi.myapplication.ui.RegisterActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

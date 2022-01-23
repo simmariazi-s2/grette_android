@@ -9,5 +9,20 @@
         android:id="@+id/loginFragment"
         android:name="com.simmariazi.myapplication.ui.login.LoginFragment"
         android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_emailVerifyFragment2"
+            app:destination="@id/emailVerifyFragment2" />
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/emailVerifyFragment2"
+        android:name="com.simmariazi.myapplication.ui.register.EmailVerifyFragment"
+        android:label="EmailVerifyFragment" />
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.simmariazi.myapplication.ui.home.HomeFragment"
+        android:label="HomeFragment" />
 </navigation>

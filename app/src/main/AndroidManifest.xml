@@ -16,9 +16,6 @@
             android:name=".ui.BoardActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.board.BoardActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.SplashActivity"
             android:exported="true">
             <intent-filter>
@@ -30,7 +27,6 @@
         <activity
             android:name=".ui.RegisterActivity"
             android:exported="false">
-
             <!-- <intent-filter> -->
             <!-- <action android:name="android.intent.action.MAIN" /> -->
             <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
@@ -42,6 +38,12 @@
         <activity
             android:name=".ui.MainActivity"
             android:exported="false" />
+
+        <activity
+            android:name=".ui.HomeActivity"
+            android:exported="false" />
+
+
     </application>
 
 </manifest>

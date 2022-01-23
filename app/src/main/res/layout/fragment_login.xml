@@ -1,120 +1,175 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.login.LoginFragment"
-    android:orientation="vertical">
-
-    <TextView
+<layout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_marginTop="124dp"
-        android:textSize="42dp"
-        android:gravity="center"
-        android:text="Grette"/>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="57dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_gravity="center"
-        android:focusable="true"
-        android:textColorHint="#999999"
-        app:hintTextColor="#999999"
-        app:boxStrokeColor="#999999"
-        android:focusableInTouchMode="true"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <EditText
-            android:id="@+id/etEmail"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/common_inputtext_border"
-            android:hint="회사 이메일"
-            android:includeFontPadding="false"
-            android:lineSpacingExtra="0dp"
-            android:singleLine="true"
-            android:textSize="14sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:layout_marginTop="15dp"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_width="match_parent"
-        android:layout_height="55dp"
-        android:layout_gravity="center"
-        android:focusable="true"
-        android:focusableInTouchMode="true"
-        android:textColorHint="#999999"
-        app:hintTextColor="#999999"
-        app:boxStrokeColor="#999999"
-        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-
-        <EditText
-            android:id="@+id/etPassword"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/common_inputtext_border"
-            android:hint="비밀번호"
-            android:includeFontPadding="false"
-            android:lineSpacingExtra="0dp"
-            android:singleLine="true"
-            android:textSize="14sp" />
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <LinearLayout
-        android:id="@+id/btnOk"
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:background="@drawable/common_button_border"
-        android:backgroundTint="#9B5EFF"
-        android:clickable="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rlCompanyName">
+        android:layout_height="match_parent"
+        tools:context=".ui.login.LoginFragment"
+        android:orientation="vertical">
 
         <TextView
+            android:fontFamily="@font/notosanskr_black"
             android:layout_width="match_parent"
-            android:layout_height="63dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginTop="124dp"
+            android:includeFontPadding="false"
+            android:bufferType="spannable"
+            android:lineSpacingExtra="0dp"
+            android:textSize="42dp"
             android:gravity="center"
-            android:text="로그인"
-            android:textColor="@color/white"
-            android:textSize="18dp"
-            android:textStyle="bold" />
-    </LinearLayout>
+            android:text="Grette"/>
 
-    <LinearLayout
-        android:layout_marginLeft="13dp"
-        android:layout_marginRight="13dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="20dp"
-        android:gravity="center">
-
-        <EditText
-            android:text="ID 찾기"
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="57dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:textColorHint="#999999"
+            app:hintTextColor="#999999"
+            app:boxStrokeColor="#999999"
+            android:focusableInTouchMode="true"
             android:clickable="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textColor="@color/editTextLinkColor"/>
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-        <EditText
-            android:text="비밀번호 찾기"
+            <EditText
+                android:id="@+id/etEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_inputtext_border"
+                android:hint="회사 이메일"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="55dp"
+            android:layout_gravity="center"
+            android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:textColorHint="#999999"
+            app:hintTextColor="#999999"
+            app:boxStrokeColor="#999999"
             android:clickable="true"
-            android:layout_marginLeft="38dp"
-            android:layout_width="wrap_content"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+
+            <EditText
+                android:id="@+id/etPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/common_inputtext_border"
+                android:hint="비밀번호"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:singleLine="true"
+                android:textSize="14sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <CheckBox
+            android:id="@+id/cbAutoLogin"
+            android:text="자동로그인"
+            android:fontFamily="@font/notosanskr_medium"
+            android:includeFontPadding="false"
+            android:lineSpacingExtra="0dp"
+            android:layout_marginTop="9dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <LinearLayout
+            android:layout_marginTop="15dp"
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/editTextLinkColor"/>
+            android:background="@drawable/common_button_border"
+            android:backgroundTint="#9B5EFF"
+            android:layout_gravity="center"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskr_medium"
+                android:gravity="center_horizontal"
+                android:text="회원가입"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/btnOk"
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/common_button_border"
+            android:backgroundTint="#9B5EFF"
+            android:clickable="true"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rlCompanyName">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="63dp"
+                android:gravity="center"
+                android:text="로그인"
+                android:textColor="@color/white"
+                android:textSize="18dp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginLeft="13dp"
+            android:layout_marginRight="13dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="20dp"
+            android:gravity="center">
+
+            <EditText
+                android:text="ID 찾기"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/notosanskr_medium"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/editTextLinkColor"/>
+
+            <EditText
+                android:text="비밀번호 찾기"
+                android:clickable="true"
+                android:focusableInTouchMode="false"
+                android:fontFamily="@font/notosanskr_medium"
+                android:includeFontPadding="false"
+                android:lineSpacingExtra="0dp"
+                android:layout_marginLeft="38dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/editTextLinkColor"/>
+        </LinearLayout>
     </LinearLayout>
-</LinearLayout>
+</layout>

@@ -40,8 +40,7 @@ class CompanySetUpFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_company_set_up, container, false)
+        binding =  DataBindingUtil.inflate(inflater, R.layout.fragment_company_set_up, container, false)
         return binding!!.root
     }
 

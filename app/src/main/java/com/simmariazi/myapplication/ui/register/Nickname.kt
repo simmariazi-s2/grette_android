@@ -9,6 +9,8 @@ import androidx.databinding.DataBindingUtil
 import com.simmariazi.myapplication.R
 import com.simmariazi.myapplication.databinding.FragmentCompanySetUpBinding
 import com.simmariazi.myapplication.databinding.FragmentNicknameBinding
+import com.simmariazi.myapplication.listener.onRegisterBtnOkClickListener
+import com.simmariazi.myapplication.ui.RegisterActivity
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -39,8 +41,7 @@ class Nickname : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding =
-            DataBindingUtil.inflate(inflater, R.layout.fragment_nickname, container, false)
+        binding =  DataBindingUtil.inflate(inflater, R.layout.fragment_nickname, container, false)
         return binding!!.root
     }
 
@@ -70,6 +71,9 @@ class Nickname : Fragment() {
     }
 
     private fun initialize() {
-
+        // 사용자 동의서 표시
+        val btnOK = binding!!.btnOk;
+        val slideLayout = (requireActivity() as RegisterActivity).getAgreement();
+        btnOK.setOnClickListener(onRegisterBtnOkClickListener(slideLayout));
     }
 }
