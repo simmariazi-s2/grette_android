@@ -64,12 +64,17 @@ class LoginFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val btnRegister = binding!!.btnRegister;
-//        btnRegister.setOnClickListener(object : View.OnClickListener {
-//            override fun onClick(v: View?) {
-//                var a = 0 ;
-//            }
-//        })
-        btnRegister.setOnClickListener(onLoginRegisterClickListener());
+        val btnRegister = binding!!.btnOk;
+        val test = binding!!.test1;
+
+        binding!!.btnOk.setOnClickListener(object : View.OnClickListener{
+            override fun onClick(p0: View?) {
+                var a = 0;
+            }
+        })
+    }
+
+    fun loglinClick(){
+        var a = 0;
     }
 }

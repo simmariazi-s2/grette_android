@@ -18,4 +18,25 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <!-- 체크박스 스타일  -->
+    <style name="checkBoxStyle" parent="@style/Widget.MaterialComponents.CompoundButton.CheckBox">
+        <item name="android:button">@drawable/checkbox_selector</item>
+    </style>
+
+
+    <style name="Widget.App.ButtonStyle"
+        parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/GreenButtonThemeOverlay</item>
+    </style>
+
+    <style name="GreenButtonThemeOverlay">
+        <item name="colorPrimary">@color/enableBtnColor</item>
+    </style>
+
+    
+    <style name="buttonStyle" parent="@style/Widget.MaterialComponents.Button">
+        <item name="android:buttonTint">@color/enableBtnColor</item>
+    </style>
+
+
 </resources>

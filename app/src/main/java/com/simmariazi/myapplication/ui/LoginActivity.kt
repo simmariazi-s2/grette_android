@@ -13,7 +13,6 @@ import com.simmariazi.myapplication.webservice.LoginService
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //setContentView(R.layout.activity_login)
 
         // binding 사용을 위해서는 layout의 최상위 항목을 <layout></layout>으로 변경 필요
         val binding:ActivityLoginBinding = DataBindingUtil.setContentView(this, R.layout.activity_login);
