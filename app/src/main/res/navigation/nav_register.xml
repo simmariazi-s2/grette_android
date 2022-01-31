@@ -5,14 +5,6 @@
     app:startDestination="@id/emailVerifyFragment">
 
     <fragment
-        android:id="@+id/emailVerifyFragment"
-        android:name="com.simmariazi.myapplication.ui.register.EmailVerifyFragment"
-        android:label="EmailVerifyFragment" >
-        <action
-            android:id="@+id/action_emailVerifyFragment_to_passwordFragment"
-            app:destination="@id/passwordFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/passwordFragment"
         android:name="com.simmariazi.myapplication.ui.register.PasswordFragment"
         android:label="PasswordFragment" >
@@ -43,4 +35,12 @@
         android:id="@+id/nickname"
         android:name="com.simmariazi.myapplication.ui.register.Nickname"
         android:label="Nickname" />
+    <fragment
+        android:id="@+id/emailVerifyFragment"
+        android:name="com.simmariazi.myapplication.ui.register.EmailVerifyFragment"
+        android:label="EmailVerifyFragment" >
+        <action
+            android:id="@+id/action_emailVerifyFragment_to_passwordFragment2"
+            app:destination="@id/passwordFragment" />
+    </fragment>
 </navigation>

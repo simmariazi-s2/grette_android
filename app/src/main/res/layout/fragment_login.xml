@@ -14,14 +14,13 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="13dp"
             android:layout_marginRight="13dp"
-            android:layout_marginTop="124dp"
+            android:layout_marginTop="120dp"
             android:includeFontPadding="false"
             android:bufferType="spannable"
             android:lineSpacingExtra="0dp"
             android:textSize="42dp"
             android:gravity="center"
             android:text="Grette"/>
-
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/linearID"
@@ -37,18 +36,19 @@
             app:hintTextColor="#999999"
             app:boxStrokeColor="#999999"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-            <EditText
-                android:id="@+id/etEmailID"
+            <com.google.android.material.textfield.TextInputEditText
                 android:hint="회사 이메일"
+                android:inputType="textNoSuggestions"
+                android:textSize="14dp"
+                android:id="@+id/etEmailID"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanskr_medium"
                 android:background="@drawable/common_inputtext_border"
-                android:textColor="@color/black"
+                android:textColor="#999999"
                 android:includeFontPadding="false"
                 android:lineSpacingExtra="0dp"
-                android:singleLine="true"
-                tools:ignore="LabelFor"/>
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
@@ -65,20 +65,20 @@
             app:hintTextColor="#999999"
             app:boxStrokeColor="#999999"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-            <EditText
+            <com.google.android.material.textfield.TextInputEditText
                 android:hint="비밀번호"
+                android:inputType="textNoSuggestions|textVisiblePassword"
                 android:id="@+id/etPassword"
+                android:textSize="14dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/notosanskr_medium"
                 android:background="@drawable/common_inputtext_border"
-                android:textColor="@color/black"
+                android:textColor="#999999"
                 android:includeFontPadding="false"
                 android:lineSpacingExtra="0dp"
-                android:singleLine="true"
-                tools:ignore="LabelFor"/>
+                android:singleLine="true"/>
         </com.google.android.material.textfield.TextInputLayout>
-
 
         <CheckBox
             style="@style/checkBoxStyle"
@@ -108,7 +108,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rlCompanyName">
             <TextView
-                android:id="@+id/test1"
                 android:layout_width="wrap_content"
                 android:layout_height="63dp"
                 android:gravity="center"
@@ -132,14 +131,17 @@
 
             <EditText
                 android:id="@+id/etFindID"
+                android:background="?attr/selectableItemBackground"
                 android:text="ID 찾기"
+                android:cursorVisible="false"
+                android:inputType="none"
                 android:includeFontPadding="false"
                 android:lineSpacingExtra="0dp"
                 android:clickable="true"
                 android:focusableInTouchMode="false"
                 android:fontFamily="@font/notosanskr_medium"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:textColor="@color/editTextLinkColor"/>
 
             <EditText
@@ -152,7 +154,7 @@
                 android:lineSpacingExtra="0dp"
                 android:layout_marginLeft="38dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:textColor="@color/editTextLinkColor"/>
 
             <EditText
@@ -165,7 +167,7 @@
                 android:lineSpacingExtra="0dp"
                 android:layout_marginLeft="38dp"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:textColor="@color/editTextLinkColor"/>
         </LinearLayout>
     </LinearLayout>

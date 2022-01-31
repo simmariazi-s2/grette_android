@@ -6,9 +6,14 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import com.simmariazi.myapplication.R
 import com.simmariazi.myapplication.databinding.FragmentLoginBinding
-import com.simmariazi.myapplication.listener.onLoginRegisterClickListener
+import com.simmariazi.myapplication.listener.login.OnLoginClickListener
+import com.simmariazi.myapplication.listener.login.OnRegisterClickListener
+import com.simmariazi.myapplication.viewModel.LoginViewModel
+import com.simmariazi.myapplication.viewModel.LoginViewModelFactory
+import com.simmariazi.myapplication.webservice.LoginService
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +29,8 @@ class LoginFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private var binding: FragmentLoginBinding? = null;
+    private var binding: FragmentLoginBinding?=null;
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,8 +45,8 @@ class LoginFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding =  DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false)
-        return inflater.inflate(R.layout.fragment_login, container, false)
+        binding = DataBindingUtil.inflate(inflater, R.layout.fragment_login, container, false);
+        return binding!!.root;
     }
 
     companion object {
@@ -64,17 +70,20 @@ class LoginFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        val btnRegister = binding!!.btnOk;
-        val test = binding!!.test1;
+        super.onViewCreated(view, savedInstanceState)
 
-        binding!!.btnOk.setOnClickListener(object : View.OnClickListener{
-            override fun onClick(p0: View?) {
-                var a = 0;
-            }
-        })
-    }
+        val btnOk = binding!!.btnOk;
+        val etRegister = binding!!.etRegister;
 
-    fun loglinClick(){
-        var a = 0;
+        val emailID = binding!!.etEmailID;
+
+        btnOk.setOnClickListener(OnLoginClickListener());
+
+        etRegister.setOnClickListener(OnRegisterClickListener(requireContext()));
+
+        val loginFactory = LoginViewModelFactory(LoginService());
+        val loginViewModel = ViewModelProvider(this, loginFactory).get(LoginViewModel::class.java);
+
+        //loginViewModel.requestUserLogin()
     }
 }

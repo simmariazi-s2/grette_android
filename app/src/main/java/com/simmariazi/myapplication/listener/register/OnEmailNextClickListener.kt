@@ -1,12 +1,12 @@
-package com.simmariazi.myapplication.listener
+package com.simmariazi.myapplication.listener.register
 
 import android.view.View
 import androidx.navigation.Navigation
 import com.simmariazi.myapplication.R
 
-class onLoginRegisterClickListener() : View.OnClickListener {
+class OnEmailNextClickListener : View.OnClickListener {
     override fun onClick(v: View?) {
         val controller = Navigation.findNavController(v!!)
-        controller.navigate(R.id.action_loginFragment_to_emailVerifyFragment2)
+     //   controller.navigate(R.id.action_emailVerifyFragment_to_passwordFragment)
     }
 }

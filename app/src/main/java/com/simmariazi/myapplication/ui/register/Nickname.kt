@@ -9,7 +9,7 @@ import androidx.databinding.DataBindingUtil
 import com.simmariazi.myapplication.R
 import com.simmariazi.myapplication.databinding.FragmentCompanySetUpBinding
 import com.simmariazi.myapplication.databinding.FragmentNicknameBinding
-import com.simmariazi.myapplication.listener.onRegisterBtnOkClickListener
+import com.simmariazi.myapplication.listener.register.OnOkClickListener
 import com.simmariazi.myapplication.ui.RegisterActivity
 
 // TODO: Rename parameter arguments, choose names that match
@@ -67,13 +67,13 @@ class Nickname : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        return initialize()
+         initialize();
     }
 
     private fun initialize() {
         // 사용자 동의서 표시
         val btnOK = binding!!.btnOk;
         val slideLayout = (requireActivity() as RegisterActivity).getAgreement();
-        btnOK.setOnClickListener(onRegisterBtnOkClickListener(slideLayout));
+        btnOK.setOnClickListener(OnOkClickListener(slideLayout));
     }
 }

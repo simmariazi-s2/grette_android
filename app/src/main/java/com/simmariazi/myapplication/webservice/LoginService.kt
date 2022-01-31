@@ -6,7 +6,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 class LoginService{
-    private val BASE_URL = "백엔드접속 URL";
+    private val BASE_URL = "http://www.naver.com";
     val webClient = BaseService().getWebClient(BASE_URL).create(LoginInterface::class.java);
 }
 

@@ -1,9 +1,9 @@
-package com.simmariazi.myapplication.listener
+package com.simmariazi.myapplication.listener.register
 
 import android.view.View
 import com.sothree.slidinguppanel.SlidingUpPanelLayout
 
-class onRegisterBtnOkClickListener(private val slidingUpPanelLayout: SlidingUpPanelLayout) : View.OnClickListener {
+class OnOkClickListener(private val slidingUpPanelLayout: SlidingUpPanelLayout) : View.OnClickListener {
     override fun onClick(v: View?) {
         // slidingUpPanelLayout
         when(slidingUpPanelLayout.panelState)

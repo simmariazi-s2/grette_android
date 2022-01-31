@@ -1,13 +1,18 @@
 package com.simmariazi.myapplication.ui.register
 
+import android.content.Context
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.simmariazi.myapplication.R
+import com.simmariazi.myapplication.common.CommonFunction
+import com.simmariazi.myapplication.common.StartApplication
 import com.simmariazi.myapplication.databinding.FragmentPasswordBinding
 
 // TODO: Rename parameter arguments, choose names that match
@@ -25,6 +30,15 @@ class PasswordFragment : Fragment() {
     private var param1: String? = null
     private var param2: String? = null
     private var binding: FragmentPasswordBinding? = null;
+
+    private lateinit var controller: NavController;
+
+    private lateinit var common:CommonFunction;
+
+
+    // 뒤로가기 이벤트 처리 콜백
+    private lateinit var onBackPressedCallback:OnBackPressedCallback;
+    private var mBackWait:Long = 0;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -63,11 +77,33 @@ class PasswordFragment : Fragment() {
             }
     }
 
+    override fun onAttach(context: Context) {
+        super.onAttach(context)
+
+        onBackPressedCallback = object : OnBackPressedCallback(true){
+            override fun handleOnBackPressed() {
+                if(System.currentTimeMillis() - mBackWait >= 2000){
+                    mBackWait = System.currentTimeMillis();
+                    common.printSnackBar(binding!!.passwordLayout, "'뒤로가기'를 한번 더 누르면 종료됩니다.");
+                }
+                else{
+                    if(controller != null)
+                        controller.popBackStack();
+                }
+            }
+        }
+
+        requireActivity().onBackPressedDispatcher.addCallback(onBackPressedCallback);
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        common = StartApplication.common;
+
         binding!!.btnOk.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
-                val controller = Navigation.findNavController(view)
+                controller = Navigation.findNavController(view)
                 controller.navigate(R.id.action_passwordFragment_to_companyCheckFragment)
             }
         })
