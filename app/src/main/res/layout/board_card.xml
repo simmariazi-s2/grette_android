@@ -3,7 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -38,7 +37,6 @@
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/postTitle">
 
-
                 <TextView
                     android:id="@+id/category"
                     android:layout_width="wrap_content"
@@ -66,7 +64,6 @@
                     android:textAlignment="center"
                     android:textColor="#8B8B9E"
                     android:textSize="10sp" />
-
             </LinearLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
@@ -89,8 +86,8 @@
 
                 <ImageView
                     android:id="@+id/mainImage"
-                    android:layout_width="wrap_content"
-                    android:layout_height="200dp"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
                     android:src="@drawable/sample_image_simba"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@+id/mainText" />
@@ -105,9 +102,7 @@
                     android:textSize="12sp"
                     app:layout_constraintLeft_toLeftOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/mainImage" />
-
             </androidx.constraintlayout.widget.ConstraintLayout>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 

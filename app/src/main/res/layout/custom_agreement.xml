@@ -12,9 +12,9 @@
 
     <View
         android:id="@+id/checkbox_on_icon"
-        android:layout_width="20dp"
-        android:layout_height="20dp"
-        android:background="@drawable/icon_checkbox_on"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:background="@drawable/checkbox_checked"
 
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -46,10 +46,8 @@
         android:layout_height="18dp"
         android:layout_marginTop="20dp"
         android:button="@drawable/selector_custom_check"
-
         app:layout_constraintTop_toBottomOf="@+id/basic_line"
         app:layout_constraintLeft_toLeftOf="@+id/basic_line"/>
-
 
     <TextView
         android:layout_width="wrap_content"
