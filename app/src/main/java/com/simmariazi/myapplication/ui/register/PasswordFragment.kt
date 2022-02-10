@@ -100,11 +100,18 @@ class PasswordFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         common = StartApplication.common;
+        val etPassword = binding!!.etPassword;
 
         binding!!.btnOk.setOnClickListener(object : View.OnClickListener {
             override fun onClick(p0: View?) {
+
+                if(etPassword.text.equals("") || etPassword.text.isNullOrEmpty()){
+                    common.printSnackBar(binding!!.passwordFramelayout, "비밀번호를 입력해주세요.");
+                    return;
+                }
+
                 controller = Navigation.findNavController(view)
-                controller.navigate(R.id.action_passwordFragment_to_companyCheckFragment)
+                controller.navigate(R.id.action_passwordFragment_to_companyCheckFragment);
             }
         })
     }
