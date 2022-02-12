@@ -77,7 +77,7 @@ class LoginFragment : Fragment() {
 
         val emailID = binding!!.etEmailID;
 
-        btnOk.setOnClickListener(OnLoginClickListener());
+        btnOk.setOnClickListener(OnLoginClickListener(requireContext(), requireActivity()));
 
         etRegister.setOnClickListener(OnRegisterClickListener(requireContext()));
 

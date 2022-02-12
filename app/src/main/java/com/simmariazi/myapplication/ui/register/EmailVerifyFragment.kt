@@ -8,6 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.databinding.DataBindingUtil
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
@@ -16,6 +17,12 @@ import com.simmariazi.myapplication.common.CommonFunction
 import com.simmariazi.myapplication.common.StartApplication
 import com.simmariazi.myapplication.databinding.ActivityLoginBinding
 import com.simmariazi.myapplication.databinding.FragmentEmailVerifyBinding
+import com.simmariazi.myapplication.viewModel.LoginViewModel
+import com.simmariazi.myapplication.viewModel.LoginViewModelFactory
+import com.simmariazi.myapplication.viewModel.RegisterViewModel
+import com.simmariazi.myapplication.viewModel.RegisterViewModelFactory
+import com.simmariazi.myapplication.webservice.LoginService
+import com.simmariazi.myapplication.webservice.RegisterService
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER

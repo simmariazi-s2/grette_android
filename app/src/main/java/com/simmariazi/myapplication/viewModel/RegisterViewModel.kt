@@ -1,6 +1,7 @@
 package com.simmariazi.myapplication.viewModel
 
 import androidx.databinding.ObservableField
+import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.simmariazi.myapplication.model.LoginModel
 import com.simmariazi.myapplication.model.RegisterModel
@@ -9,17 +10,13 @@ import retrofit2.Callback
 import retrofit2.Response
 import java.util.*
 
-class RegisterViewModel(userRegister:RegisterService) : ViewModel(){
+data class RegisterViewModel(private val userRegister:RegisterService) : ViewModel(){
     var email: ObservableField<String> = ObservableField("email")
     var password: ObservableField<String> = ObservableField("password")
     var nickname: ObservableField<String> = ObservableField("nickname")
     var company: ObservableField<String> = ObservableField("company")
 
-    private val _userRegister = userRegister
-
-    fun getEmail() {
-
-    }
+    private val _userRegister = userRegister;
 
     fun requestRegister(){
         //.. retorift servcice method call

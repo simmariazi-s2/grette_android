@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="RegisterViewModel"
             type="com.simmariazi.myapplication.viewModel.RegisterViewModel" />
@@ -17,7 +16,6 @@
         tools:context=".ui.register.EmailVerifyFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
-
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:paddingLeft="12dp"
@@ -36,7 +34,6 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
                 android:id="@+id/rlEmail"
                 android:layout_width="0dp"
                 android:layout_height="55dp"
@@ -163,6 +160,7 @@
                 app:layout_constraintEnd_toEndOf="@+id/tvHelp"
                 app:layout_constraintStart_toStartOf="@+id/tvHelp"
                 app:layout_constraintTop_toBottomOf="@+id/tvHelp" />
+
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
