@@ -2,20 +2,24 @@
 <layout>
     <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_width="130dp"
+        android:layout_height="160dp"
+
         android:id="@+id/boardMainLayout"
-        app:cardCornerRadius="10dp">
+        android:layout_marginLeft="15dp"
+        app:cardCornerRadius="15dp">
 
         <LinearLayout
-            android:layout_marginTop="17dp"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:backgroundTint="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginLeft="13dp"
+                android:layout_marginTop="17dp"
                 android:id="@+id/boardTitle"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:includeFontPadding="false"
                 android:textColor="#6C6C7D"
@@ -23,19 +27,18 @@
 
             <TextView
                 android:id="@+id/boardContents"
-                android:layout_width="match_parent"
+                android:layout_marginLeft="13dp"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#8B8B9E"
                 android:textSize="9dp"/>
 
             <ImageView
+                android:layout_gravity="center"
                 android:id="@+id/boardImage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"/>
-
         </LinearLayout>
-
-
 
     </androidx.cardview.widget.CardView>
 </layout>

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout>
-    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
+<layout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.main.MainFragment">
@@ -49,12 +50,33 @@
                     android:src="@drawable/ic_main_line"/>
             </LinearLayout>
 
-            <androidx.viewpager2.widget.ViewPager2
-                android:layout_marginTop="15dp"
-                android:layout_marginLeft="15dp"
-                android:id="@+id/boardList"
+            <FrameLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/boardList"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+<!--                <ImageView-->
+<!--                    android:layout_marginTop="100dp"-->
+<!--                    android:src="@drawable/ic_list_tail"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"/>-->
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_marginTop="32dp"
+                android:background="#F7F7FA"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
+                android:layout_height="20dp"/>
+
+
+
+
         </LinearLayout>
     </FrameLayout>
 </layout>

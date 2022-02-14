@@ -1,6 +1,7 @@
 package com.simmariazi.myapplication.viewholder
 
 import android.content.Context
+import android.content.res.ColorStateList
 import android.graphics.Color
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -16,7 +17,7 @@ class BoardViewHolder(private val binding:MainBoardItemBinding) : RecyclerView.V
 
         binding.boardTitle.setText(boardTitle);
         binding.boardContents.setText(boardContents);
-        binding.boardMainLayout.setBackgroundColor(Color.parseColor(backColor));
+        binding.boardMainLayout.setCardBackgroundColor(Color.parseColor(backColor));
 
         Glide.with(context).load(boardResID).into(binding.boardImage);
 

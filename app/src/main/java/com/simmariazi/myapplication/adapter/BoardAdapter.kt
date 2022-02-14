@@ -13,7 +13,8 @@ import com.simmariazi.myapplication.viewholder.BoardViewHolder
 
 class BoardAdapter(private val context:Context, private val boardList:ArrayList<BoardModel>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
-        return boardList.count();
+        //return boardList.count();
+        return Integer.MAX_VALUE;
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -23,8 +24,9 @@ class BoardAdapter(private val context:Context, private val boardList:ArrayList<
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+        val realPos = position % boardList.size;
         if(holder is BoardViewHolder){
-            val item = boardList.get(position);
+            val item = boardList.get(realPos);
             holder.bind(context, item);
         }
     }

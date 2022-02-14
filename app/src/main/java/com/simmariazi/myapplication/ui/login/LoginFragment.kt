@@ -11,6 +11,7 @@ import com.simmariazi.myapplication.R
 import com.simmariazi.myapplication.databinding.FragmentLoginBinding
 import com.simmariazi.myapplication.listener.login.OnLoginClickListener
 import com.simmariazi.myapplication.listener.login.OnRegisterClickListener
+import com.simmariazi.myapplication.ui.LoginActivity
 import com.simmariazi.myapplication.viewModel.LoginViewModel
 import com.simmariazi.myapplication.viewModel.LoginViewModelFactory
 import com.simmariazi.myapplication.webservice.LoginService
@@ -77,7 +78,11 @@ class LoginFragment : Fragment() {
 
         val emailID = binding!!.etEmailID;
 
-        btnOk.setOnClickListener(OnLoginClickListener(requireContext(), requireActivity()));
+        val loginActivity = requireActivity() as LoginActivity;
+
+        btnOk.setOnClickListener(OnLoginClickListener(requireContext(), loginActivity));
+        
+
 
         etRegister.setOnClickListener(OnRegisterClickListener(requireContext()));
 
