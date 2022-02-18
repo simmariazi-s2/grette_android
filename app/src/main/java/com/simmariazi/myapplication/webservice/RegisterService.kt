@@ -26,6 +26,5 @@ interface RegisterInterface {
 
         //이름은 @Get 으로 불러오는 이름과 동일(물어보기)
     ): Call<RegisterModel>
-
     /// ... etc
 }

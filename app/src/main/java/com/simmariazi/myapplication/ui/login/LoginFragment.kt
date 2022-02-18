@@ -81,9 +81,6 @@ class LoginFragment : Fragment() {
         val loginActivity = requireActivity() as LoginActivity;
 
         btnOk.setOnClickListener(OnLoginClickListener(requireContext(), loginActivity));
-        
-
-
         etRegister.setOnClickListener(OnRegisterClickListener(requireContext()));
 
         val loginFactory = LoginViewModelFactory(LoginService());

@@ -4,14 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.viewpager2.widget.ViewPager2
+import androidx.lifecycle.ViewModelProvider
 import com.simmariazi.myapplication.R
 import com.simmariazi.myapplication.adapter.BoardAdapter
 import com.simmariazi.myapplication.databinding.FragmentMainBinding
 import com.simmariazi.myapplication.model.BoardModel
+import com.simmariazi.myapplication.viewModel.MainViewFactory
+import com.simmariazi.myapplication.viewModel.MainViewModel
+import com.simmariazi.myapplication.webservice.MainBoardService
 
 
 // TODO: Rename parameter arguments, choose names that match
@@ -71,34 +73,19 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val boardList = ArrayList<BoardModel>();
         if(binding != null){
 
-            val rumorBoard = BoardModel.Builder().Color("#FFF1EB").BoardTitle("진짜래?")
-                .BoardContents("사내 소문들을 얘기해요\n확실하지 않은 정보도 괜찮아요").BoardIConID(R.drawable.ic__rumor_board).build();
+            val mainViewFactory = MainViewFactory(MainBoardService());
+            val mainViewModel = ViewModelProvider(this, mainViewFactory).get(MainViewModel::class.java);
+            mainViewModel.requestBoard();
 
-            val rumorBoard2 = BoardModel.Builder().Color("#F3FBFF").BoardTitle("진짜래?")
-                .BoardContents("사내 소문들을 얘기해요\n확실하지 않은 정보도 괜찮아요").BoardIConID(R.drawable.ic_rumo2_board).build();
-
-            val eatBoard = BoardModel.Builder().Color("#F5FFF5").BoardTitle("마시때")
-                .BoardContents("회사 근처 맛집, 별로인 곳 모두 맛집 게시판에 공유해요").BoardIConID(R.drawable.ic_eat_rest_board).build();
-
-            val canBoard =  BoardModel.Builder().Color("#F5FFF5").BoardTitle("할거래")
-                .BoardContents("사내 소문들을 얘기해요\n확실하지 않은 정보도 괜찮아요").BoardIConID(R.drawable.ic_can_board).build();
-
-            boardList.add(rumorBoard);
-            boardList.add(rumorBoard2);
-            boardList.add(eatBoard);
-            boardList.add(canBoard);
+            binding!!.mainModel = mainViewModel;
+            binding!!.lifecycleOwner = viewLifecycleOwner;
 
             val boardRecycler = binding!!.boardList;
-
-
-
-
-
-            boardRecycler.adapter = BoardAdapter(requireContext(), boardList);
-
+            boardRecycler.setHasFixedSize(true);
+            boardRecycler.adapter = BoardAdapter(requireContext(), ArrayList<BoardModel>());
         }
     }
 }
+

@@ -20,9 +20,6 @@
             android:name=".ui.custom.CustomGlobalNavigation"
             android:exported="false" />
         <activity
-            android:name=".ui.custom.CustomReportModal"
-            android:exported="false" />
-        <activity
             android:name=".ui.custom.CustomSetting"
             android:exported="false" />
         <activity

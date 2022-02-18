@@ -11,7 +11,7 @@ import com.simmariazi.myapplication.databinding.MainBoardItemBinding
 import com.simmariazi.myapplication.model.BoardModel
 import com.simmariazi.myapplication.viewholder.BoardViewHolder
 
-class BoardAdapter(private val context:Context, private val boardList:ArrayList<BoardModel>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class BoardAdapter(private val context:Context, private var boardList:ArrayList<BoardModel>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun getItemCount(): Int {
         //return boardList.count();
         return Integer.MAX_VALUE;
@@ -29,5 +29,10 @@ class BoardAdapter(private val context:Context, private val boardList:ArrayList<
             val item = boardList.get(realPos);
             holder.bind(context, item);
         }
+    }
+
+    fun setBoardList(boardList:ArrayList<BoardModel>){
+        this.boardList = boardList;
+        notifyDataSetChanged();
     }
 }
