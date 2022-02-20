@@ -1,7 +1,8 @@
 package com.simmariazi.myapplication.model
 
 class BoardModel(builder:Builder) {
-    private var color:String= builder.color;
+    private var color:String = builder.color;
+    private var boardID:Int = 0;
     private var boardTitle:String = builder.boardTitle;
     private var boardContents:String = builder.boardContents;
     private var boardIconID:Int = builder.boardIconID;

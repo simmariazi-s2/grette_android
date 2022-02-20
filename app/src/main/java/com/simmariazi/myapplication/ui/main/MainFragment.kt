@@ -9,7 +9,9 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.simmariazi.myapplication.R
 import com.simmariazi.myapplication.adapter.BoardAdapter
+import com.simmariazi.myapplication.adapter.MainBoardAdapter
 import com.simmariazi.myapplication.databinding.FragmentMainBinding
+import com.simmariazi.myapplication.model.BoardMessageModel
 import com.simmariazi.myapplication.model.BoardModel
 import com.simmariazi.myapplication.viewModel.MainViewFactory
 import com.simmariazi.myapplication.viewModel.MainViewModel
@@ -78,6 +80,7 @@ class MainFragment : Fragment() {
             val mainViewFactory = MainViewFactory(MainBoardService());
             val mainViewModel = ViewModelProvider(this, mainViewFactory).get(MainViewModel::class.java);
             mainViewModel.requestBoard();
+            mainViewModel.requestBoardMessage();
 
             binding!!.mainModel = mainViewModel;
             binding!!.lifecycleOwner = viewLifecycleOwner;
@@ -85,7 +88,10 @@ class MainFragment : Fragment() {
             val boardRecycler = binding!!.boardList;
             boardRecycler.setHasFixedSize(true);
             boardRecycler.adapter = BoardAdapter(requireContext(), ArrayList<BoardModel>());
+
+            val messageRecycler = binding!!.mainBoardList;
+            messageRecycler.setHasFixedSize(true);
+            messageRecycler.adapter = MainBoardAdapter(requireContext(), ArrayList<BoardMessageModel>());
         }
     }
 }
-

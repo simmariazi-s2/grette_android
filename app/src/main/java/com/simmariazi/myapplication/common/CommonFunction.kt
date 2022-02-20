@@ -6,15 +6,19 @@ import androidx.constraintlayout.widget.ConstraintLayout
 import com.simmariazi.myapplication.ui.custom.CustomSnackBar
 
 class CommonFunction {
-    fun printSnackBar(layout:LinearLayout, message:String){
-        CustomSnackBar.make(layout, message).show();
+
+    val SUCCESS = 0;
+    val WARNING = 1;
+
+    fun printSnackBar(layout:LinearLayout, message:String, type:Int){
+        CustomSnackBar.make(layout, message, type).show();
     }
 
-    fun printSnackBar(layout:ConstraintLayout, message:String){
-        CustomSnackBar.make(layout, message).show();
+    fun printSnackBar(layout:ConstraintLayout, message:String, type:Int){
+        CustomSnackBar.make(layout, message, type).show();
     }
 
-    fun printSnackBar(layout:FrameLayout, message:String){
-        CustomSnackBar.make(layout, message).show();
+    fun printSnackBar(layout:FrameLayout, message:String, type:Int){
+        CustomSnackBar.make(layout, message, type).show();
     }
 }

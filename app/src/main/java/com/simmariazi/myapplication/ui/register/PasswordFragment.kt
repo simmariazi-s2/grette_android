@@ -84,7 +84,7 @@ class PasswordFragment : Fragment() {
             override fun handleOnBackPressed() {
                 if(System.currentTimeMillis() - mBackWait >= 2000){
                     mBackWait = System.currentTimeMillis();
-                    common.printSnackBar(binding!!.passwordLayout, "'뒤로가기'를 한번 더 누르면 종료됩니다.");
+                    common.printSnackBar(binding!!.passwordLayout, "'뒤로가기'를 한번 더 누르면 종료됩니다.", common.WARNING);
                 }
                 else{
                     if(controller != null)
@@ -106,7 +106,7 @@ class PasswordFragment : Fragment() {
             override fun onClick(p0: View?) {
 
                 if(etPassword.text.equals("") || etPassword.text.isNullOrEmpty()){
-                    common.printSnackBar(binding!!.passwordFramelayout, "비밀번호를 입력해주세요.");
+                    common.printSnackBar(binding!!.passwordFramelayout, "비밀번호를 입력해주세요.", common.WARNING);
                     return;
                 }
 

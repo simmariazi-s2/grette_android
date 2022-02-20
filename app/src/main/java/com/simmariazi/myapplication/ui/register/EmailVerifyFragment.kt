@@ -12,11 +12,13 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
+import com.google.android.material.snackbar.Snackbar
 import com.simmariazi.myapplication.R
 import com.simmariazi.myapplication.common.CommonFunction
 import com.simmariazi.myapplication.common.StartApplication
 import com.simmariazi.myapplication.databinding.ActivityLoginBinding
 import com.simmariazi.myapplication.databinding.FragmentEmailVerifyBinding
+import com.simmariazi.myapplication.ui.custom.CustomSnackBar
 import com.simmariazi.myapplication.viewModel.LoginViewModel
 import com.simmariazi.myapplication.viewModel.LoginViewModelFactory
 import com.simmariazi.myapplication.viewModel.RegisterViewModel
@@ -92,14 +94,12 @@ class EmailVerifyFragment : Fragment() {
             override fun handleOnBackPressed() {
                 if(System.currentTimeMillis() - mBackWait >= 2000){
                     mBackWait = System.currentTimeMillis();
-                    common.printSnackBar(binding!!.layoutVerifyEmail, "'뒤로가기'를 한번 더 누르면 종료됩니다.");
+                    common.printSnackBar(binding!!.layoutVerifyEmail, "'뒤로가기'를 한번 더 누르면 종료됩니다.", common.WARNING);
                 }
                 else
                     requireActivity().finish();
-
             }
         }
-
         requireActivity().onBackPressedDispatcher.addCallback(onBackPressedCallback);
     }
 
